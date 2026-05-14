@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-source-serif), Georgia, serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+
+  --color-bg: oklch(0.97 0.005 85);
+  --color-surface: oklch(1 0 0);
+  --color-surface-2: oklch(0.985 0.005 85);
+  --color-ink: oklch(0.18 0.01 260);
+  --color-ink-2: oklch(0.36 0.01 260);
+  --color-ink-3: oklch(0.55 0.01 260);
+  --color-line: oklch(0.91 0.005 85);
+  --color-line-2: oklch(0.86 0.005 85);
+  --color-accent: oklch(0.36 0.07 250);
+  --color-accent-2: oklch(0.45 0.09 250);
+  --color-accent-soft: oklch(0.94 0.025 250);
+  --color-danger: oklch(0.5 0.18 27);
+  --color-warn: oklch(0.65 0.13 65);
+  --color-ok: oklch(0.55 0.13 145);
+}
+
+.dark {
+  --color-bg: oklch(0.16 0.01 260);
+  --color-surface: oklch(0.21 0.01 260);
+  --color-surface-2: oklch(0.19 0.01 260);
+  --color-ink: oklch(0.96 0.005 85);
+  --color-ink-2: oklch(0.78 0.01 260);
+  --color-ink-3: oklch(0.58 0.01 260);
+  --color-line: oklch(0.28 0.01 260);
+  --color-line-2: oklch(0.34 0.01 260);
+  --color-accent: oklch(0.7 0.12 250);
+  --color-accent-2: oklch(0.78 0.13 250);
+  --color-accent-soft: oklch(0.27 0.04 250);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* A4 paper kept as plain CSS for easy edits */
+.a4 {
+  width: 794px;
+  min-height: 1123px;
+  background: #fff;
+  color: #111;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.06), 0 8px 28px rgba(0,0,0,0.10);
+  padding: 56px 64px 64px;
+  font-family: var(--font-serif);
+  font-size: 13.5px;
+  line-height: 1.55;
+  position: relative;
+}
+.a4 .doc-head { display:flex; flex-direction:column; align-items:center; text-align:center; border-bottom:1.2px solid #111; padding-bottom:14px; margin-bottom:22px; }
+.a4 .uni { font-weight:700; font-size:14px; letter-spacing:0.02em; text-transform:uppercase; font-family: var(--font-sans); }
+.a4 .uni .light { font-weight:400; }
+.a4 .doc-title { font-weight:600; font-size:20px; letter-spacing:0.18em; margin-top:12px; text-transform:uppercase; }
+.a4 .meta-grid { display:grid; grid-template-columns:1fr 1fr; gap:6px 32px; margin-bottom:18px; }
+.a4 .meta-row { display:grid; grid-template-columns:130px 1fr; align-items:baseline; gap:6px; font-size:13px; }
+.a4 .meta-row .lab { font-weight:500; }
+.a4 .meta-row .val { border-bottom:1px dotted #555; min-height:18px; padding-left:4px; }
+.a4 .meta-row .val.empty::after { content:"..........................."; color:#888; }
+.a4 .body-label { font-weight:700; margin:18px 0 6px; }
+.a4 .body-box {
+  border:1.2px solid #111; min-height:260px; padding:14px 16px;
+  background: repeating-linear-gradient(to bottom, transparent 0, transparent 25px, #d8d8d8 25px, #d8d8d8 26px);
+  white-space:pre-wrap; word-wrap:break-word; line-height:26px; font-size:13.5px;
+}
+.a4 .body-box.empty { color:#aaa; font-style:italic; }
+.a4 .typing { background:#fef9c3; transition: background 1.2s; }

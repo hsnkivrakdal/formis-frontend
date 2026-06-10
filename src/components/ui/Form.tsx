@@ -7,8 +7,8 @@ export function Checkbox({ className, ...p }: React.InputHTMLAttributes<HTMLInpu
     <input
       type="checkbox"
       className={cn(
-        "h-4 w-4 rounded border-[var(--color-line-2)] bg-[var(--color-surface)] text-[var(--color-accent)]",
-        "focus:ring-2 focus:ring-[var(--color-accent-soft)] focus:ring-offset-0 cursor-pointer",
+        "h-4 w-4 rounded border-line-2 bg-surface text-accent",
+        "focus:ring-2 focus:ring-accent-soft focus:ring-offset-0 cursor-pointer",
         className
       )}
       {...p}
@@ -25,7 +25,7 @@ export function Switch({ checked, onCheckedChange, label }: { checked: boolean; 
       onClick={() => onCheckedChange(!checked)}
       className={cn(
         "relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border transition-colors",
-        checked ? "bg-[var(--color-accent)] border-[var(--color-accent)]" : "bg-[var(--color-surface-2)] border-[var(--color-line-2)]"
+        checked ? "bg-accent border-accent" : "bg-surface-2 border-line-2"
       )}
       title={label}
     >
